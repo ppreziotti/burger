@@ -2,13 +2,25 @@
 var connection = require('./connection.js');
 
 var orm = {
-	selectAll: function() {
-
+	selectAll: function(table, cb) {
+		var queryString = "SELECT * FROM " + table + ";";
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw(err);
+			}
+			cb(result);
+		});
 	},
-	insertOne: function() {
-
+	insertOne: function(table, cols, vals, cb) {
+		var queryString = "INSERT INTO " + table + " (" + cols + ") " + "VALUES (" + vals + ");";
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		})
 	},
-	updateOne: function() {
+	updateOne: function(table, cols) {
 
 	}
 }
