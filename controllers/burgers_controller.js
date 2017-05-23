@@ -15,7 +15,11 @@ router.get('/', function(req, res) {
 });
 
 // Post route for creating a burger
-
+router.post('/', function(req, res) {
+	burger.insertOne("burger_name", req.body.name, function() {
+		res.redirect('/');
+	});
+});
 
 // Put route for updating the devoured status of a burger
 

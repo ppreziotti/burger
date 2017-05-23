@@ -7,7 +7,7 @@
 <form class="create-form" action="/" method="POST">
 	<div class="form-group">
 		<label for="burger-input">Enter a burger:</label>
-		<input type="text" id="burger-input">
+		<input type="text" id="burger-input" name="name">
 		<button type="submit" id="submit">Submit</button>
 	</div>
 </form>
@@ -15,7 +15,13 @@
 <ul>
 	{{#each burgers}}
 		{{#unless this.devoured}}
-			<li>{{this.burger_name}}</li>
+			<li>
+				{{this.burger_name}}
+				<form action="/{{this.id}}?_method=PUT" method="POST">
+	      			<input type="hidden" name="devoured" value="false">
+	      			<button type="submit" class="devour">DEVOUR IT!</button>
+        		</form>
+			</li>
 		{{/unless}}
 	{{/each}}
 </ul>
