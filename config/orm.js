@@ -20,8 +20,14 @@ var orm = {
 			cb(result);
 		})
 	},
-	updateOne: function(table, cols) {
-
+	updateOne: function(table, objColsVals, condition, cb) {
+		var queryString = "UPDATE " + table + " SET " + objColsVals + " WHERE " + condition;
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		})
 	}
 }
 

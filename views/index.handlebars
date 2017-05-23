@@ -1,0 +1,21 @@
+<h1>Eat-Da-Burger!</h2>
+
+<img src="./assets/images/burger.png" alt="burger">
+
+<h2>Type in the burger you would like to add and then click submit!</h2>
+
+<form class="create-form" action="/" method="POST">
+	<div class="form-group">
+		<label for="burger-input">Enter a burger:</label>
+		<input type="text" id="burger-input">
+		<button type="submit" id="submit">Submit</button>
+	</div>
+</form>
+
+<ul>
+	{{#each burgers}}
+		{{#unless this.devoured}}
+			<li>{{this.burger_name}}</li>
+		{{/unless}}
+	{{/each}}
+</ul>
