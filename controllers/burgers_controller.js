@@ -22,5 +22,12 @@ router.post('/', function(req, res) {
 });
 
 // Put route for updating the devoured status of a burger
+router.put('/:id', function(req, res) {
+	var condition = "id = " + req.params.id;
+	console.log(condition);
+	burger.updateOne({devoured: true}, condition, function() {
+		res.redirect('/');
+	});
+});
 
 module.exports = router;

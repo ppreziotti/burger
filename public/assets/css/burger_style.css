@@ -1,5 +1,6 @@
 body {
 	text-align: center;
+	background-color: #E55200;
 }
 
 li {
@@ -9,6 +10,7 @@ li {
 	width: 400px;
 }
 
-.devour {
-/*	float: left;*/
+img {
+	width: 250px;
+	height: 250px;
 }

@@ -12,7 +12,7 @@
 	</div>
 </form>
 
-<ul>
+<ul id="burger-list">
 	{{#each burgers}}
 		{{#unless this.devoured}}
 			<li>
@@ -23,5 +23,15 @@
         		</form>
 			</li>
 		{{/unless}}
+	{{/each}}
+</ul>
+
+<ul id="devoured-list">
+	{{#each burgers}}
+		{{#if this.devoured}}
+			<li>
+				{{this.burger_name}}
+			</li>
+		{{/if}}
 	{{/each}}
 </ul>
