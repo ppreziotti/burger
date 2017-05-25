@@ -1,37 +1,59 @@
-<h1>Eat-Da-Burger!</h2>
+<div class="container">
 
-<img src="./assets/images/burger.png" alt="burger">
+	<h1>Eat-Da-Burger!</h1>
 
-<h2>Type in the burger you would like to add and then click submit!</h2>
+	<img src="./assets/images/burger.png" alt="burger">
 
-<form class="create-update-form" action="/" method="POST">
-	<div class="form-group">
-		<label for="burger-input">Enter a burger:</label>
-		<input type="text" id="burger-input" name="name">
-		<button type="submit" id="submit">Submit</button>
+	<div class="row">
+
+		<div class="col-md-12">
+
+			<h2>Type in the burger you would like to add and then click submit!</h2>
+
+			<form class="create-update-form" action="/" method="POST">
+				<div class="form-group">
+					<label for="burger-input">Enter a burger:</label>
+					<input type="text" id="burger-input" name="name">
+					<button type="submit" id="submit">Submit</button>
+				</div>
+			</form>
+
+		</div>
+
 	</div>
-</form>
 
-<ul id="burger-list">
-	{{#each burgers}}
-		{{#unless this.devoured}}
-			<li>
-				{{this.burger_name}}
-				<form action="/{{this.id}}?_method=PUT" method="POST">
-	      			<input type="hidden" name="devoured" value="false">
-	      			<button type="submit" class="devour">DEVOUR IT!</button>
-        		</form>
-			</li>
-		{{/unless}}
-	{{/each}}
-</ul>
+	<div class="row">
 
-<ul id="devoured-list">
-	{{#each burgers}}
-		{{#if this.devoured}}
-			<li>
-				{{this.burger_name}}
-			</li>
-		{{/if}}
-	{{/each}}
-</ul>
+		<div class="col-md-6" id="burger-div">
+			{{#each burgers}}
+				{{#unless this.devoured}}
+					<div class="row burger-row">
+						<div class="col-md-9">
+							<p class="burger">{{this.burger_name}}</p>
+						</div>
+						<div class="col-md-3">
+							<form action="/{{this.id}}?_method=PUT" method="POST">
+				      			<input type="hidden" name="devoured" value="false">
+				      			<button type="submit" class="btn-devour">DEVOUR IT!</button>
+			        		</form>
+			        	</div>
+					</div>
+				{{/unless}}
+			{{/each}}
+		</div>
+
+		<div class="col-md-6" id="devoured-div">
+			{{#each burgers}}
+				{{#if this.devoured}}
+					<div class="row devoured-row">
+						<div class="col-md-9">
+							<p class="devoured">{{this.burger_name}}</p>
+						</div>
+					</div>
+				{{/if}}
+			{{/each}}
+		</div>
+
+	</div>
+
+</div>

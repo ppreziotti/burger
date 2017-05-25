@@ -3,14 +3,16 @@ body {
 	background-color: #E55200;
 }
 
-li {
+.burger, .devoured {
 	padding: 5px;
-	margin: 5px;
 	background-color: green;
-	width: 400px;
 }
 
 img {
 	width: 250px;
 	height: 250px;
+}
+
+.btn-devour {
+
 }
