@@ -18,4 +18,5 @@ var burger = {
 	}
 }
 
+// Making the burger object available to be used in the burger controller file
 module.exports = burger;

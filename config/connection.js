@@ -2,6 +2,8 @@
 var mysql = require('mysql');
 var connection; 
 
+// Establish JawsDB database connection for running the Heroku deployed app or the localhost
+// database connection for running the app locally
 if (process.env.JAWSDB_URL) {
 	connection = mysql.createConnection(process.env.JAWSDB_URL);
 } 

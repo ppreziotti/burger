@@ -12,6 +12,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+// Creating the ORM for the app
 var orm = {
 	selectAll: function(table, cb) {
 		var queryString = "SELECT * FROM " + table + ";";

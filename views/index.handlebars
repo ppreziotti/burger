@@ -10,10 +10,10 @@
 
 			<h2>Enter the type of burger you would like to add and then click submit!</h2>
 
-			<form class="create-update-form" action="/" method="POST">
+			<form class="create-update-form" action="/" method="POST" onsubmit="return validateForm()" name="burger-form">
 				<div class="form-group">
 					<label for="burger-input">Enter a burger:</label>
-					<input type="text" id="burger-input" name="name" size="50">
+					<input type="text" id="burger-input" name="name" size="50" required>
 					<button type="submit" id="submit">Submit</button>
 				</div>
 			</form>
@@ -57,3 +57,6 @@
 	</div>
 
 </div>
+
+<!--Linking external javascript file to be used for front-end form valuation -->
+<script type="text/javascript" src="/assets/javascript/script.js"></script>

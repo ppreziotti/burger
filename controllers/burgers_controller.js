@@ -3,7 +3,7 @@ var burger = require('../models/burger.js');
 
 var router = express.Router();
 
-// Get home page
+// Get route for home page - display all burgers
 router.get('/', function(req, res) {
 	burger.selectAll(function(data) {
 		var hbsObj = {
@@ -30,4 +30,5 @@ router.put('/:id', function(req, res) {
 	});
 });
 
+// Making the burger controller available to be used in the server file
 module.exports = router;
