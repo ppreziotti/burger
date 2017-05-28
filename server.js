@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Override with POST when an action has ?_method=DELETE
 app.use(methodOverride("_method"));
 
 // Set up handlebars, use main.handlebars as the default html layout, and establish handlebars as
